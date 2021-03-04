@@ -1,0 +1,32 @@
+.card{
+  display: flex;
+  flex-direction: column;
+}
+
+.card img{
+  height: 18rem;
+  width: 15rem;
+}
+
+.card span{
+  font-weight: bold;
+}
+
+.icons{
+  display: flex;
+}
+
+.icons .iconButton{
+  background: transparent;
+  border: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  margin-right: 1rem;
+
+}
+
+.icons img{
+  height: 1.5rem;
+  width: 1.5rem;
+}
