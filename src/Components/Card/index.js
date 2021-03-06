@@ -1,12 +1,18 @@
+
 import styles from '../../styles/Components/cards.module.css';
 
-export const Card = () => {
-  return (
-    <div className={styles.card}>
 
-      <img src="https://github.com/jhonnatanBezerra.png" alt="profile photo" />
-      <span>Jhonnatan Bezerra</span>
-      <p>Front-end Developer</p>
+export const Card = ({ name, job, photo }) => {
+
+  function openModal() {
+
+  }
+
+  return (
+    <div className={styles.card} onClick={openModal}>
+      <img src={photo} alt="profile photo" />
+      <span>{name}</span>
+      <p>{job}</p>
 
       <div className={styles.icons}>
         <button className={styles.iconButton}>

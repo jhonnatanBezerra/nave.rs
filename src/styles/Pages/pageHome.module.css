@@ -30,6 +30,12 @@ main.content section button{
   text-align: center;
   font-weight: bold;
   border: none;
+  transition: background-color 0.2s;
+}
+
+main.content section > button:hover{
+  background: black;
+  border-radius: 5px;
 }
 
 
@@ -39,6 +45,7 @@ main.content section button{
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
+
 
 
 
