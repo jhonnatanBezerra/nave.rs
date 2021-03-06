@@ -3,13 +3,15 @@
   flex-direction: column;
 }
 
-.card:hover{
-  cursor: pointer;
-}
+
 
 .card img{
   height: 18rem;
   width: 15rem;
+}
+
+.card img:hover{
+   cursor: pointer; 
 }
 
 .card span{
