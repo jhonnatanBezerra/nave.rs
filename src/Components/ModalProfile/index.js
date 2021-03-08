@@ -1,26 +1,36 @@
+import { useContext } from 'react';
+import { HomeContext } from '../../contexts/homeContext';
+import moment from 'moment';
+
 import styles from '../../styles/Components/modalProfile.module.css';
 
 export const ModalProfile = () => {
+
+  const { user, closeModal } = useContext(HomeContext);
+  const years = moment().diff(user.birthdate, 'years');
+
+  console.log();
+
   return (
     <div>
       <div className={styles.overlay}>
         <div className={styles.container}>
-          <img src="https://github.com/jhonnatanBezerra.png" alt="perfil" />
+          <img src={user.url} alt="perfil" />
           <section>
 
-            <h1>Juliano Reis
-            <img src="./close.svg" alt="fechar modal" onClick={null} />
+            <h1>{user.name}
+              <img src="./close.svg" alt="fechar modal" onClick={closeModal} />
             </h1>
-            <p>Front-end Developer</p>
+            <p>{user.job_role}</p>
 
             <span>Idade</span>
-            <p>Lorem ipsum</p>
+            <p>{years}</p>
 
             <span>Tempo de empresa</span>
             <p>Lorem ipsum</p>
 
             <span>Projetos que participou</span>
-            <p>Lorem ipsum</p>
+            <p>{user.project}</p>
 
 
 

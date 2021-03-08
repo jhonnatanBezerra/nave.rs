@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react"
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
-import { Card } from "../Components/Card"
 
 import { Navbar } from "../Components/Navbar"
-import { Api } from "../service/api"
 
 import styles from './../styles/Pages/pageHome.module.css'
+import { HomeProvider } from "../contexts/homeContext"
 
 export default function HomePage() {
 
@@ -14,40 +12,29 @@ export default function HomePage() {
 
   const router = useRouter();
 
-  const [listCards, setListCards] = useState([]);
-
-  useEffect(() => {
-    Api.get('navers', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => {
-      setListCards(response.data);
-
-    })
-  }, []);
 
   return (
     <>
 
-      <div className={styles.container}>
+      <div className={styles.homeContainer}>
         <header>
           <Navbar />
         </header>
-
-        <main className={styles.content}>
-          <section>
+        <main className={styles.mainHome}>
+          <div className={styles.middleHome}>
             <h1>Navers</h1>
-            <button onClick={() => router.push('/NewNaver')}>Adicionar Naver</button>
+            <button onClick={() => router.push('/NewNaver')}>Adicionar naver</button>
+          </div>
+
+          <section className={styles.sectionCard}>
+            <HomeProvider>
+
+            </HomeProvider>
           </section>
 
-          <section className={styles.cards}>
-            {listCards.map(card => (
-              <Card key={card.id} name={card.name} job={card.job_role} photo={card.url} />
-            ))}
-          </section>
+
+
         </main>
-
       </div>
     </>
   )

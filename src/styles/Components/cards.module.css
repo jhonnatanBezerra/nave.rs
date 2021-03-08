@@ -1,45 +1,25 @@
-.card{
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.card img{
-  height: 18rem;
-  width: 15rem;
-}
-
-.card img:hover{
-   cursor: pointer; 
-}
-
-.card span{
-  font-weight: bold;
-}
-
-.icons{
-  display: flex;
-}
-
-.icons .iconButton{
+.cardContainer > button{
   background: transparent;
-  border: none;
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 0;
+  border: 0; 
+}
+
+.cardContainer > button > img{
+  height: 20rem;
+  width: 100%;
+}
+
+.cardContainer > h1{
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.iconsCard{
+  display: flex;
+}
+
+.iconsCard > button{
+  background: transparent;
+  border: none; 
+  font-size: 0px;
   margin-right: 0.5rem;
-
-}
-
-.icons img{
-  height: 1.5rem;
-  width: 1.5rem;
-  transition: width 0.2s;
-  transition: height 0.2s;
-}
-
-.icons img:hover{
-  height: 1.8rem;
-  width: 1.8rem;
 }
