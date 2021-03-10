@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Navbar } from "../Components/Navbar";
 import { Card } from '../Components/Card';
@@ -8,12 +8,29 @@ import { HomeContext } from "../contexts/homeContext";
 import styles from './../styles/Pages/pageHome.module.css';
 import { ModalProfile } from '../Components/ModalProfile';
 import { Modal, ModalInfo } from '../Components/Modal';
+import { Api } from '../service/api';
 
 export default function HomePage() {
 
   const router = useRouter();
+  const [listCards, setListCards] = useState([]);
 
-  const { listCards, modalProfile, modalDel, modalInfo } = useContext(HomeContext);
+  const { modalProfile, modalDel, modalInfo, token, user } = useContext(HomeContext);
+
+  const searchAllNavers = () => {
+    console.log('entrei');
+    Api.get('navers', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(response => {
+      setListCards(response.data);
+    })
+  }
+
+  useEffect(() => {
+    searchAllNavers();
+  }, [user]);
 
   return (
     <>

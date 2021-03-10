@@ -5,7 +5,6 @@ import { Api } from '../service/api';
 
 export const HomeContext = createContext({});
 
-
 export const HomeProvider = ({ children }) => {
 
   const [modalProfile, setModalProfile] = useState(false);
@@ -18,21 +17,16 @@ export const HomeProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const token = Cookies.get('token');
 
-  const [listCards, setListCards] = useState([]);
-
   const searchAllNavers = () => {
+    console.log('entrei');
     Api.get('navers', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then(response => {
-      setListCards(response.data);
+      setUser(response.data);
     })
   }
-
-  useEffect(() => {
-    searchAllNavers();
-  }, []);
 
 
   return (
@@ -41,10 +35,10 @@ export const HomeProvider = ({ children }) => {
       setModalInfo, modalInfo,
       setModalDel, modalDel,
       setModalNewNaver, modalNewNaver,
-      searchAllNavers, user,
+      user, searchAllNavers,
       setUserEditing, userEditing,
       setModalEditNaver, modalEditNaver,
-      listCards, setUser, token
+      setUser, token
     }}>
       {children}
 
