@@ -52,17 +52,6 @@
   font-weight: bold;
 }
 
-.buttonBox{
-  margin-top: 1rem;
-}
-
-.buttonBox > button{
-  background: transparent;
-  border: none; 
-  font-size: 0px;
-  margin-right: 0.5rem;
-}
-
 
 
 

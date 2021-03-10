@@ -13,7 +13,7 @@ import { HomeContext } from '../contexts/homeContext';
 
 export default function NewNaver() {
 
-  const { setModalEditNaver, modalEditNaver, modalNewNaver, setModalNewNaver, user, setUserEditing, token, userEditing } = useContext(HomeContext);
+  const { modalNewNaver, setModalNewNaver, user, setUserEditing, token, userEditing } = useContext(HomeContext);
 
 
   const router = useRouter();
@@ -31,6 +31,7 @@ export default function NewNaver() {
   }
 
   const handleCreate = async (e) => {
+    console.log('criei');
     e.preventDefault();
 
     const data = {
@@ -49,23 +50,10 @@ export default function NewNaver() {
         }
       })
       setModalNewNaver(true);
-      clear();
-
     } catch (err) {
       alert(err)
     }
 
-  }
-
-  const clear = () => {
-    console.log(userEditing);
-    console.log('limpando');
-    setName('');
-    setDate('');
-    setProject('');
-    setJobRole('');
-    setAdmission('');
-    setURL('');
   }
 
   const handleUpdate = async (e) => {
@@ -89,7 +77,6 @@ export default function NewNaver() {
           Authorization: `Bearer ${token}`
         }
       })
-      setModalEditNaver(true);
     } catch (err) {
       alert(err)
     }
@@ -107,9 +94,7 @@ export default function NewNaver() {
             <h1>
               <img src="./Vector.png" alt="" onClick={() => backToHome()} />
               {userEditing ? 'Editar Naver' : 'Adicionar Naver'}
-
             </h1>
-
             <form onSubmit={userEditing ? handleUpdate : handleCreate} >
 
               <section className={styles.leftForm}>
@@ -141,7 +126,6 @@ export default function NewNaver() {
           </div>
         </div>
         {modalNewNaver && <ModalInfo title="Naver criado" text='Naver criado com sucesso!' />}
-        {modalEditNaver && <ModalInfo title="Naver atualizado" text='Naver atualizado com sucesso!' />}
       </div>
 
     </>

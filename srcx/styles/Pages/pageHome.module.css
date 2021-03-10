@@ -30,12 +30,6 @@
   background: var(--principal);
   color: var(--white);
   font-weight: bold;
-  transition: background 0.2s;
-}
-
-.middleHome > button:hover{
-  background: black;
-  border-radius: 5px;
 }
 
 .sectionCard{

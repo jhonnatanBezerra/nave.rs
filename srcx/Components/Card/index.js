@@ -60,3 +60,4 @@ export const Card = ({ name, photo, job, idNaver }) => {
     </>
   )
 }
+

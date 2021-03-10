@@ -12,7 +12,6 @@ export const HomeProvider = ({ children }) => {
   const [modalInfo, setModalInfo] = useState(false);
   const [modalDel, setModalDel] = useState(false);
   const [modalNewNaver, setModalNewNaver] = useState(false);
-  const [modalEditNaver, setModalEditNaver] = useState(false);
   const [userEditing, setUserEditing] = useState(false);
 
   const [user, setUser] = useState([]);
@@ -43,7 +42,6 @@ export const HomeProvider = ({ children }) => {
       setModalNewNaver, modalNewNaver,
       searchAllNavers, user,
       setUserEditing, userEditing,
-      setModalEditNaver, modalEditNaver,
       listCards, setUser, token
     }}>
       {children}

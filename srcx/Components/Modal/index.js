@@ -44,12 +44,11 @@ export const Modal = ({ title, text }) => {
 
 export const ModalInfo = ({ title, text }) => {
 
-  const { setModalInfo, setModalNewNaver, setModalEditNaver } = useContext(HomeContext);
+  const { setModalInfo, setModalNewNaver } = useContext(HomeContext);
 
   const close = () => {
     setModalNewNaver(false);
     setModalInfo(false);
-    setModalEditNaver(false);
   }
 
   return (

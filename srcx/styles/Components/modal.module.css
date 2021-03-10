@@ -1,5 +1,5 @@
 
-.modalInfoOverlay{
+.overlay{
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.modalInfoContainer{
+.modalContainer{
   background: var(--white);
   width: 100%;
   max-width: 45rem;
@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.modalInfoContainer header{
+.modalContainer header{
   font-size: 2rem;
   font-weight: 600;
 
@@ -29,19 +29,18 @@
 
 }
 
-.modalInfoContainer p{
+.modalContainer p{
   font-size: 1.25rem;
   color: var(--text);
   margin-top: 0.25rem;
 }
 
-.optionsModalInfo{
+.options{
   display: flex;
   justify-content: flex-end;
-  margin-top: 3rem;
 }
 
-.optionsModalInfo button{
+.options button{
   font-weight: bold;
   height: 2rem;
   width: 10rem;
@@ -50,31 +49,17 @@
   border: 1px solid var(--principal);
 }
 
-.optionsModalInfo button:hover{
-  border-radius: 5px;
-}
-
-.optionsModalInfo button + button{
+.options button + button{
   background: var(--principal);
   margin-left: 1.5rem;
   color: var(--white);
-  transition: background 0.2s;
 }
 
-.optionsModalInfo button + button:hover{
-  background: black;
-  border-radius: 5px;
-}
-
-.modalInfoContainer > button{
+.modalContainer > button{
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
   background: transparent;
   border: 0;
   font-size: 0;
-}
-
-.btn{
-  color: red
 }
