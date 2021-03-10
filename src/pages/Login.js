@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 import { Api } from '../service/api.js';
 import { useState } from 'react';
 import Cookies from 'js-cookie'
@@ -36,6 +37,9 @@ export default function Login() {
     <div className={styles.container}>
 
       <div className={styles.content}>
+        <Head >
+          <title>nave.rs | Login</title>
+        </Head>
         <header>
           <img src="/Path.png" alt="logo" />
           <h1>nave.rs</h1>
