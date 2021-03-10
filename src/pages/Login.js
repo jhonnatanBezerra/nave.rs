@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 
 import styles from '../styles/Pages/login.module.css';
 
-export const Login = () => {
+export default function Login() {
 
   const router = useRouter();
 
