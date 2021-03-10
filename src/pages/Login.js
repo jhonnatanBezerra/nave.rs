@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { Api } from '../service/api.js';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Cookies from 'js-cookie'
 
 import styles from '../styles/Pages/login.module.css';

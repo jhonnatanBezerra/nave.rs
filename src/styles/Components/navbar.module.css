@@ -18,7 +18,9 @@ header.header p img{
   margin-right: 0.75rem;
 }
 
-header.header a{
+header.header button{
   font-weight: bold;
   font-size: 1.2rem;
+  border: none;
+  background: transparent;
 }
