@@ -1,7 +1,5 @@
-import { Login } from './Login';
-import { HomePage } from './Home';
-import { NewNaver } from './NewNaver';
-import { Modal } from '../Components/Modal';
+import Login from './Login';
+
 
 
 export default function Home() {
