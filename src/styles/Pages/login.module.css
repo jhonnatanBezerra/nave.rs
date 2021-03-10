@@ -45,6 +45,7 @@ form.form button{
 
 form.form button:hover{
   background-color: black;
+  border-radius: 5px;
 }
 
 .inputGroup{
