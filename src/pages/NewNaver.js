@@ -99,7 +99,9 @@ export default function NewNaver() {
 
   return (
     <>
-
+      <Head>
+        <title>Nave.rs</title>
+      </Head>
       <div className={styles.newNaverContainer}>
         <Navbar />
         <div className={styles.newNaverContent}>

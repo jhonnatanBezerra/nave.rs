@@ -38,7 +38,7 @@ export default function Login() {
 
       <div className={styles.content}>
         <Head >
-          <title>nave.rs | Login</title>
+          <title>Nave.rs | Login</title>
         </Head>
         <header>
           <img src="/Path.png" alt="logo" />
