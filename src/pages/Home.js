@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { useContext, useEffect, useState } from 'react';
 
 import { Navbar } from "../Components/Navbar";
@@ -34,6 +35,9 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>Nave.rs | Home</title>
+      </Head>
       <div className={styles.homeContainer}>
         <header>
           <Navbar />
