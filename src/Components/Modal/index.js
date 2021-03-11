@@ -6,13 +6,13 @@ import styles from '../../styles/Components/modal.module.css';
 
 export const Modal = ({ title, text }) => {
 
-  const { setModalDel, user, setUser, token, setModalInfo, searchAllNavers } = useContext(HomeContext);
+  const { setModalDel, user, setUser, token, setModalInfo } = useContext(HomeContext);
 
   const deletUser = async (id) => {
     const response = await Api.delete(`/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     setModalInfo(true);
     closeAndClear();
-    searchAllNavers();
+
   }
 
   const closeAndClear = () => {

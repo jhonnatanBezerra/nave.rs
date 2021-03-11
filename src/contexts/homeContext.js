@@ -17,17 +17,6 @@ export const HomeProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const token = Cookies.get('token');
 
-  const searchAllNavers = () => {
-    console.log('entrei');
-    Api.get('navers', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => {
-      setUser(response.data);
-    })
-  }
-
 
   return (
     <HomeContext.Provider value={{
@@ -35,7 +24,7 @@ export const HomeProvider = ({ children }) => {
       setModalInfo, modalInfo,
       setModalDel, modalDel,
       setModalNewNaver, modalNewNaver,
-      user, searchAllNavers,
+      user,
       setUserEditing, userEditing,
       setModalEditNaver, modalEditNaver,
       setUser, token

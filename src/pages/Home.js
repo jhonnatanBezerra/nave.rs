@@ -19,7 +19,6 @@ export default function HomePage() {
   const { modalProfile, modalDel, modalInfo, token, user } = useContext(HomeContext);
 
   const searchAllNavers = () => {
-    console.log('entrei');
     Api.get('navers', {
       headers: {
         Authorization: `Bearer ${token}`
@@ -35,6 +34,7 @@ export default function HomePage() {
 
   return (
     <>
+
       <Head>
         <title>Nave.rs | Home</title>
       </Head>

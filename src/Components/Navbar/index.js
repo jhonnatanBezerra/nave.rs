@@ -17,7 +17,7 @@ export const Navbar = () => {
         <p>
           <img src="./Path.png" alt="logo" />
           nave.rs </p>
-        <button onClick={exit}>Sair</button>
+        <button onClick={() => exit()}>Sair</button>
       </header>
     </>
   )
