@@ -17,7 +17,6 @@ export const HomeProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const token = Cookies.get('token');
 
-
   return (
     <HomeContext.Provider value={{
       setModalProfile, modalProfile,

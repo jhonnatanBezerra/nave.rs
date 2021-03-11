@@ -6,7 +6,6 @@ export const Navbar = () => {
   const router = useRouter();
 
   const exit = () => {
-    console.log('executou');
     Cookies.remove('token');
     router.push("/");
   }

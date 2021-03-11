@@ -28,7 +28,6 @@ export const Card = ({ name, photo, job, idNaver }) => {
   }
 
   const searchToUpdate = async (id) => {
-    console.log('procurar');
     const response = await Api.get(`/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     setUser(response.data);
     setUserEditing(true);

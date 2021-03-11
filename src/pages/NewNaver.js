@@ -5,10 +5,11 @@ import moment from 'moment';
 
 import { Navbar } from '../Components/Navbar';
 import { Api } from '../service/api';
-import { Modal, ModalInfo } from '../Components/Modal';
+import { ModalInfo } from '../Components/Modal';
 
 import styles from '../styles/Pages/newNaver.module.css';
 import { HomeContext } from '../contexts/homeContext';
+import { Authenticated } from '../service/auth';
 
 
 export default function NewNaver() {
@@ -58,8 +59,6 @@ export default function NewNaver() {
   }
 
   const clear = () => {
-    console.log(userEditing);
-    console.log('limpando');
     setName('');
     setDate('');
     setProject('');
@@ -71,8 +70,6 @@ export default function NewNaver() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     const id = user.id;
-    console.log('atualizei');
-
 
     const data = {
       name,
@@ -148,4 +145,15 @@ export default function NewNaver() {
 
     </>
   )
+}
+
+export const getServerSideProps = async (ctx) => {
+
+  if (!Authenticated(ctx.req)) {
+    ctx.res.writeHead(303, { Location: '/' });
+    ctx.res.end();
+  }
+
+  return { props: {} };
+
 }

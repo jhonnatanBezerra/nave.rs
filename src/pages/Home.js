@@ -10,13 +10,14 @@ import styles from './../styles/Pages/pageHome.module.css';
 import { ModalProfile } from '../Components/ModalProfile';
 import { Modal, ModalInfo } from '../Components/Modal';
 import { Api } from '../service/api';
+import { Authenticated } from '../service/auth';
 
 export default function HomePage() {
 
   const router = useRouter();
   const [listCards, setListCards] = useState([]);
 
-  const { modalProfile, modalDel, modalInfo, token, user } = useContext(HomeContext);
+  const { modalProfile, modalDel, modalInfo, user, token } = useContext(HomeContext);
 
   const searchAllNavers = () => {
     Api.get('navers', {
@@ -62,4 +63,15 @@ export default function HomePage() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps = async (ctx) => {
+
+  if (!Authenticated(ctx.req)) {
+    ctx.res.writeHead(303, { Location: '/' });
+    ctx.res.end();
+  }
+
+  return { props: {} };
+
 }
