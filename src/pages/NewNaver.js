@@ -136,7 +136,7 @@ export default function NewNaver() {
                 <input type="text" placeholder={userEditing ? user.url : "URL da foto Naver"} onChange={e => setURL(e.target.value)} />
 
                 <div className={styles.buttonForm}>
-                  <button type="submit">{userEditing ? 'Editar' : 'Salvar'}</button>
+                  <button type="submit">Salvar</button>
                 </div>
               </section>
             </form>

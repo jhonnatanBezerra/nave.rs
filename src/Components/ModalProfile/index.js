@@ -3,15 +3,26 @@ import { HomeContext } from '../../contexts/homeContext';
 import moment from 'moment';
 
 import styles from '../../styles/Components/modalProfile.module.css';
+import { Api } from '../../service/api';
+import { useRouter } from 'next/router';
 
 export const ModalProfile = () => {
 
-  const { user, setModalProfile, setModalDel } = useContext(HomeContext);
+  const { user, setModalProfile, setModalDel, setUserEditing, token, setUser } = useContext(HomeContext);
 
+  const router = useRouter();
 
   const confirmDelete = () => {
     setModalProfile(false),
       setModalDel(true)
+  }
+
+  const searchToUpdate = async (id) => {
+    console.log('procurar');
+    const response = await Api.get(`/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    setUser(response.data);
+    setUserEditing(true);
+    router.push('/NewNaver');
   }
 
   return (
@@ -42,7 +53,7 @@ export const ModalProfile = () => {
               <button onClick={confirmDelete} >
                 <img src="./Delete-Icon.png" alt="delet icon" />
               </button>
-              <button >
+              <button onClick={() => searchToUpdate(user.id)}>
                 <img src="./Edit-Icon.png" alt="edit icon" />
               </button>
 
